@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1070289701364",
+    "firebase_url": "https://tcc-fcm.firebaseio.com",
+    "project_id": "tcc-fcm",
+    "storage_bucket": "tcc-fcm.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1070289701364:android:4b2ee81cf9a9cbe8",
+        "android_client_info": {
+          "package_name": "com.tcc.fcm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1070289701364-d90nag3did31bden0nrf3hdrk89c6jf0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB8AGZK0-89BfJZiuytXr2a6r4T_YB8cEE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1070289701364-d90nag3did31bden0nrf3hdrk89c6jf0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
