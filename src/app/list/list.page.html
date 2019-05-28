@@ -10,18 +10,55 @@
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <ion-item *ngFor="let item of items">
-      <ion-icon [name]="item.icon" slot="start"></ion-icon>
-      {{item.title}}
-      <div class="item-note" slot="end">
-        {{item.note}}
+  <ion-card class="welcome-card">
+    <ion-card-header>
+      <ion-card-title>Line 2</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <div scrollX="true" style="width:630px;">
+        <canvas id="chart-line-2"></canvas>
+        <p style="min-width:310px;">&nbsp;</p>
       </div>
-    </ion-item>
-  </ion-list>
-  <!--
-    <div *ngIf="selectedItem" padding>
-      You navigated here from <b>{{selectedItem.title }}</b>
-    </div>
-  -->
+    </ion-card-content>
+  </ion-card>
+  <ion-card class="welcome-card">
+      <ion-card-header>
+        <ion-card-title>Bar</ion-card-title>
+      </ion-card-header>
+    <ion-card-content>
+      <div style="position: relative; height:100%; width:100%">
+        <canvas id="chart-bar"></canvas>
+      </div>
+    </ion-card-content>
+  </ion-card>
+  <ion-card class="welcome-card">
+      <ion-card-header>
+          <ion-card-title>Line</ion-card-title>
+        </ion-card-header>
+    <ion-card-content>
+      <div style="position: relative; height:100%; width:100%">
+        <canvas id="chart-line"></canvas>
+      </div>
+    </ion-card-content>
+  </ion-card>
+  <ion-card class="welcome-card">
+      <ion-card-header>
+          <ion-card-title>Pie</ion-card-title>
+        </ion-card-header>
+    <ion-card-content>
+      <div style="position: relative; height:100%; width:100%">
+        <canvas id="chart-pie"></canvas>
+      </div>
+    </ion-card-content>
+  </ion-card>
+  <ion-card class="welcome-card">
+    <ion-card-header>
+        <ion-card-title>Pie</ion-card-title>
+      </ion-card-header>
+    <ion-card-content>
+      <div style="position: relative; height:100%; width:100%">
+        <canvas id="chart-pie"></canvas>
+      </div>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

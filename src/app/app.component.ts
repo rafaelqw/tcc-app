@@ -15,7 +15,7 @@ import { async } from '@angular/core/testing';
 export class AppComponent {
   public appPages = [
     {
-      title: 'Home',
+      title: 'Dashboard',
       url: '/home',
       icon: 'home'
     },

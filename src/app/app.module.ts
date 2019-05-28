@@ -23,6 +23,7 @@ import { ChartsModule } from 'ng2-charts';
     IonicModule.forRoot(),
     AppRoutingModule,
     HttpModule,
+    ChartsModule,
     IonicStorageModule.forRoot()
   ],
   providers: [
@@ -30,8 +31,7 @@ import { ChartsModule } from 'ng2-charts';
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     FCM,
-    Device,
-    ChartsModule
+    Device
   ],
   bootstrap: [AppComponent]
 })

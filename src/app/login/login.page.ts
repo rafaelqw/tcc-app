@@ -60,7 +60,8 @@ export class LoginPage implements OnInit {
           this.data = JSON.parse(stringify(result));
           if (this.data.login) {
             await this.storage.set('token',this.data.token);
-            await this.storage.set('id_usuario_logado',this.data.id_usuario);
+            await this.storage.set('id_usuario',this.data.id_usuario);
+            await this.storage.set('id_empreendimento', this.data.id_empreendimento);
             await this.storage.set('notification',this.data.notification);
             this.email = null;
             this.senha = null;

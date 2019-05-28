@@ -2,3 +2,47 @@
   max-height: 35vh;
   overflow: hidden;
 }
+
+div[scrollx=true] {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  &::-webkit-scrollbar {
+      display: none;
+  }
+  .scroll-item {
+      flex: 0 0 auto; 
+  }
+}
+
+.intervalo{
+  p{
+    text-align: center;
+    width: 100%;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
+
+  .buttons{
+    text-align: center;
+  }
+
+  .btn_intervalo{
+    width: 23%;
+  }
+}
+
+.chart{
+  .chart_header{
+    text-align: center;
+    padding: 10px;
+    background: #3880ffbd;
+      .title{
+        color: #0f0f0f;
+        font-size: 22px;
+        font-weight: 600;
+      }
+  }
+}
+
