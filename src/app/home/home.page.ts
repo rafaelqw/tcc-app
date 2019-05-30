@@ -32,10 +32,10 @@ export class HomePage {
 
   private async initialize(){
     this.menuCtrl.enable(true);
-    await this.updateGraphics(60);
     if(await this.storage.get('notification')){
       await this.showAlertNotificacao();
     }
+    await this.updateGraphics(60);
   }
 
   private async updateGraphics(periodo){

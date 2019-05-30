@@ -37,12 +37,18 @@ div[scrollx=true] {
   .chart_header{
     text-align: center;
     padding: 10px;
-    background: #3880ffbd;
+    background: #88b3ff9e;
       .title{
         color: #0f0f0f;
         font-size: 22px;
         font-weight: 600;
       }
   }
+}
+
+.borderShadow{
+  -webkit-box-shadow: 0px 1px 10px 0px rgba(0,0,0,0.2);
+  -moz-box-shadow: 0px 1px 10px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 1px 10px 0px rgba(0,0,0,0.2);
 }
 

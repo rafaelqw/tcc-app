@@ -12,18 +12,18 @@
 <ion-content>
   <ion-card class="intervalo">
       <ion-card-content>
-          <p>Filtrar pelos ultimos:</p>
+          <p>Filtrar pelas ultimas:</p>
           <div class="buttons">
-              <ion-button class="btn_intervalo" shape="round" (click)='updateGraphics(60)'>60m</ion-button>
-              <ion-button class="btn_intervalo" shape="round" (click)='updateGraphics(30)'>30m</ion-button>
-              <ion-button class="btn_intervalo" shape="round" (click)='updateGraphics(15)'>15m</ion-button>
-              <ion-button class="btn_intervalo" shape="round" (click)='updateGraphics(5)'>5m</ion-button>
+              <ion-button class="btn_intervalo" shape="round" (click)='updateGraphics(60)'>24h</ion-button>
+              <ion-button class="btn_intervalo" shape="round" (click)='updateGraphics(30)'>12h</ion-button>
+              <ion-button class="btn_intervalo" shape="round" (click)='updateGraphics(15)'>6h</ion-button>
+              <ion-button class="btn_intervalo" shape="round" (click)='updateGraphics(5)'>2h</ion-button>
           </div>
       </ion-card-content>
   </ion-card>
   
   <ion-card class="chart" *ngFor="let sensor of sensores">
-    <ion-card-header class="chart_header">
+    <ion-card-header class="chart_header borderShadow">
       <ion-card-title class="title">{{ sensor.nome }}</ion-card-title>
     </ion-card-header>
     <ion-card-content>
