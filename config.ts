@@ -5,5 +5,5 @@ const connections = {
 }
 
 export const ConnectionConf = {
-    urlBase: connections.urlApiRede
+    urlBase: connections.urlLocal
 }

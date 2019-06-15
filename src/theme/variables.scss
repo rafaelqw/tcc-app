@@ -3,6 +3,43 @@
 
 /** Ionic CSS Variables **/
 :root {
+  ion-content{
+    --background: #eef5f9;
+  }
+
+  ion-toolbar{
+      --background: #00897b;
+      color: white;
+  }
+
+  ion-card{
+    background-color: white;
+  }
+
+  .login{
+    ion-list{
+      background: #eef5f9;
+      ion-item{
+        --background: #eef5f9;
+      }
+    }
+  }
+
+  .listMenu{
+    --background: #272c33;
+    ion-list{
+        background: #272c33;
+      ion-item{
+        --background: #272c33;
+        color: #798699;
+        ion-icon{
+          color: #798699;
+        }
+      }
+    }
+    
+  }
+
   /** primary **/
   --ion-color-primary: #3880ff;
   --ion-color-primary-rgb: 56, 128, 255;

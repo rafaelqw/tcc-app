@@ -71,7 +71,7 @@ export class HomePage {
     var receiver = {
       registration_id: await this.storage.get('tokenFCM'),
       device_name: this.device.model,
-      id_usuario: await this.storage.get('id_usuario_logado'),
+      id_usuario: await this.storage.get('id_usuario'),
       flg_notificacao_ativa: flg_notificacao
     }
 

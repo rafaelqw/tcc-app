@@ -36,7 +36,6 @@ export class LoginPage implements OnInit {
   initialize(){
     this.email = "";
     this.senha = "";
-    //this.showAlertNotificacao();
   }
 
   ngOnInit() {
@@ -45,9 +44,9 @@ export class LoginPage implements OnInit {
 
   // Faz a autenticação do Usuario
   async loginErrado() {
-    this.storage.set('token',"123");
-    this.storage.set('id_usuario_logado',1);
-    this.storage.set('notification',true);
+    await this.storage.set('token',"123");
+    await this.storage.set('id_usuario',1);
+    await this.storage.set('notification',true);
     this.email = null;
     this.senha = null;
     this.navCtrl.navigateRoot('/home');
