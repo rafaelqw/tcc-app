@@ -25,8 +25,15 @@ export class HomePage {
     private servHome: HomeService,
     private servSensor: SensoresService
   ) {
-    this.initialize();
+    //this.initialize();
     //this.updateGraphics(60);
+  }
+  async ngOnInit() {
+    this.menuCtrl.enable(true);
+    if(await this.storage.get('notification')){
+      await this.showAlertNotificacao();
+    }
+    await this.updateGraphics(60);
   }
 
   private async initialize(){
@@ -37,11 +44,13 @@ export class HomePage {
     await this.updateGraphics(60);
   }
 
-  private async updateGraphics(periodo){
+  // Atualiza os graficos dos sensores recebendo o periodo como paramento
+  public async updateGraphics(periodo){
     await this.getSensores();
     await this.getDataGraphic(periodo);
   }
 
+  // Exibe Mensagem perguntando se o usuario deseja receber notificações no celular
   private async showAlertNotificacao() {
     const alert = await this.alertController.create({
       header: 'Notificação!',
@@ -66,6 +75,7 @@ export class HomePage {
     await alert.present();
   }
 
+  // Salva o dispositivo do usuario na API
   private async saveReceiver(flg_notificacao = false){
     var receiver = {
       registration_id: await this.storage.get('tokenFCM'),
@@ -86,7 +96,8 @@ export class HomePage {
     });
   }
 
-  async getRandomColor() {
+  // Gera um cor randomica
+  private async getRandomColor() {
     var letters = '0123456789AB';
     var color = '#';
     for (var i = 0; i < 6; i++) {
@@ -95,6 +106,7 @@ export class HomePage {
     return color;
   }
 
+  // Exibe uma mensagem pro usuario
   private async showToast(message:string, color:string, duration:any){
     const toast = await this.toastController.create({
       message: message,
@@ -106,11 +118,13 @@ export class HomePage {
     toast.present();
   }
 
+  // Busca os Sensores vinculados ao usuario
   private async getSensores(){
     this.sensores = await this.servSensor.getSensores();
     this.sensores = JSON.parse(this.sensores);
   }
 
+  // Busca os Dados do sensor e monta o grafico dele
   private async getDataGraphic(periodo){
 
     for (let i = 0; i < this.sensores.length; i++) {

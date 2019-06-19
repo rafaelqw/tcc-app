@@ -19,12 +19,14 @@ export class SensoresService {
     this.initialize();
    }
 
-  public async initialize(){
+  // Busca o token, id_usuario e id_empreendimento no BD local do celular
+  private async initialize(){
     this.token = await this.storage.get('token'); 
     this.id_usuario = await this.storage.get('id_usuario');
     this.id_empreendimento = await this.storage.get('id_empreendimento');
   }
 
+  // Busca os sensores vinculados ao empreendimento via HTTP
   public async getSensores(){
     this.initialize();
     var headers = new Headers();
@@ -46,6 +48,7 @@ export class SensoresService {
     });
   }
 
+  // Busca os sensor pelo id via HTTP
   public async getSensoresById(id){
     this.initialize();
     var headers = new Headers();
@@ -67,6 +70,7 @@ export class SensoresService {
     });
   }
 
+  // Busca os sensores vinculados a um dispostivo via HTTP
   public async getSensoresByDispositivo(id_dispositivo){
     this.initialize();
     var headers = new Headers();
@@ -88,6 +92,7 @@ export class SensoresService {
     });
   }
 
+  // Busca os dados do sensor em um periodo de tempo
   public async getDataGraphic(sensor, periodo){
     var headers = new Headers();
     headers.append('Content-Type', 'application/json' );

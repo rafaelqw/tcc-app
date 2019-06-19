@@ -19,12 +19,14 @@ export class DispositivosService {
     this.initialize();
   }
 
-  public async initialize(){
+  // Busca o token, id_usuario e id_empreendimento no BD local do celular
+  private async initialize(){
     this.token = await this.storage.get('token'); 
     this.id_usuario = await this.storage.get('id_usuario');
     this.id_empreendimento = await this.storage.get('id_empreendimento');
   }
 
+  // Busca os dispositivos vinculados ao empreendimento via requisição HTTP
   public async getDispositivos(){
     await this.initialize();
     var headers = new Headers();

@@ -18,12 +18,14 @@ export class DispositivosPage implements OnInit {
     this.loadDispositivos();
   }
 
-  async loadDispositivos(){
+  // Busco os Dispositivos vinculados ao empreendimento
+  private async loadDispositivos(){
     this.dispositivos = await this.servDisp.getDispositivos();
     this.dispositivos = JSON.parse(this.dispositivos);
   }
 
-  async redirectSensores(id_dispositivo){
+  // Redireciona para a tela de Sensores com o id do dispositivo selecionado pelo usuario
+  public async redirectSensores(id_dispositivo){
     this.navCtrl.navigateRoot('/sensores/'+ id_dispositivo);
   }
 }

@@ -30,29 +30,15 @@ export class LoginPage implements OnInit {
     private device: Device
   ) {
     this.menuCtrl.enable(false);
-    this.initialize();
   }
 
-  initialize(){
+  ngOnInit() {
     this.email = "";
     this.senha = "";
   }
 
-  ngOnInit() {
-    
-  }
-
   // Faz a autenticação do Usuario
-  async loginErrado() {
-    await this.storage.set('token',"123");
-    await this.storage.set('id_usuario',1);
-    await this.storage.set('notification',true);
-    this.email = null;
-    this.senha = null;
-    this.navCtrl.navigateRoot('/home');
-  }
-
-  async login(){
+  public async login(){
     if (this.email != "" && this.senha != "") {
       this.servLogin.login(this.email, this.senha)
         .then(async result => {
@@ -85,7 +71,8 @@ export class LoginPage implements OnInit {
     }
   }
 
-  async showToast(message:string, color:string, duration:any){
+  // Exibe Mensagem de Sucesso ou erro do login
+  private async showToast(message:string, color:string, duration:any){
     const toast = await this.toastController.create({
       message: message,
       showCloseButton: true,
@@ -95,29 +82,4 @@ export class LoginPage implements OnInit {
     });
     toast.present();
   }
-
-  async showAlertNotificacao() {
-    const alert = await this.alertController.create({
-      header: 'Notificação!',
-      message: 'Deseja receber notificações neste celular?',
-      buttons: [
-        {
-          text: 'Não',
-          role: 'cancel',
-          cssClass: 'secondary',
-          handler: (blah) => {
-            console.log('Confirm Cancel: blah');
-          }
-        }, {
-          text: 'Sim',
-          handler: () => {
-            console.log('Confirm Okay');
-          }
-        }
-      ]
-    });
-
-    await alert.present();
-  }
-
 }

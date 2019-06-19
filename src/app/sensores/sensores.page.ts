@@ -28,17 +28,20 @@ export class SensoresPage implements OnInit {
     }
   }
 
+  // Busca os dados dos sensores
   private async getSensores(){
     this.sensores = await this.servSensor.getSensores();
     this.sensores = JSON.parse(this.sensores);
   }
 
+  // Busca os dados dos sensores de um dispositivo especifico
   private async getSensoresByDispostivo(){
     this.sensores = await this.servSensor.getSensoresByDispositivo(this.id_disposito);
     this.sensores = JSON.parse(this.sensores);
   }
 
-  async redirectSensores(id_sensor){
+  // Redireciona para a tela de Detalhes do Sensor com o id do sensor selecionado pelo usuario
+  public async redirectSensores(id_sensor){
     this.navCtrl.navigateRoot('/sensor-detail/'+ id_sensor);
   }
 }

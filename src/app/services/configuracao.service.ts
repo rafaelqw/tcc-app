@@ -18,13 +18,15 @@ export class ConfiguracaoService {
     private storage: Storage
   ) { }
 
-  async initialize(){
+  // Busca o token, id_usuario e registration_id no BD local do celular
+  private async initialize(){
     this.token = await this.storage.get('token'); 
     this.id_usuario = await this.storage.get('id_usuario');
     this.registration_id = await this.storage.get('tokenFCM');
   }
 
-  async getReceiver(){
+  // Busca os receiver via requisição HTTP
+  public async getReceiver(){
     await this.initialize();
     this.registration_id = "fbhtJl14WqU:APA91bFKngMmxYKNfShpGWGSBX95hYpGiiHMUciZnIFVJ1MgNpgqRtKeG5bbLCLKfA082gLFFJu1gU1ZiW9H8ifbTSnpHhwRPE0I46lEc_ikAxE-akMip61k9OBhN_nH4UyKyT1zu5t-";
     var headers = new Headers();
@@ -46,7 +48,8 @@ export class ConfiguracaoService {
     });
   }
 
-  async putReceiver(body){
+  // Atualzia o receiver via requisição HTTP
+  public async putReceiver(body){
     await this.initialize();
     this.registration_id = "fbhtJl14WqU:APA91bFKngMmxYKNfShpGWGSBX95hYpGiiHMUciZnIFVJ1MgNpgqRtKeG5bbLCLKfA082gLFFJu1gU1ZiW9H8ifbTSnpHhwRPE0I46lEc_ikAxE-akMip61k9OBhN_nH4UyKyT1zu5t-";
     var headers = new Headers();

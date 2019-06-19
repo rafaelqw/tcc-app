@@ -8,15 +8,13 @@ import { Storage } from '@ionic/storage';
 })
 
 export class LoginService {
-  //variables
-  private autenticacao: any;
-
   constructor(
     public http: Http,
     public requestOptions: RequestOptions,
     private storage: Storage
   ) { }
-
+  
+  // Faz a verificação do login do usuario via HTTP
   public async login(email:string, senha:string) {
     var headers = new Headers();
     headers.append('Content-Type', 'application/json' );

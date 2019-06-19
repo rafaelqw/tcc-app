@@ -22,7 +22,8 @@ export class ConfiguracaoPage implements OnInit {
     this.notification = this.receiver.flg_notificacao_ativa;
   }
 
-  async notificationChange(){
+  // Altera o a configuração do dispositivo se ele pode receber notificações
+  public async notificationChange(){
     this.receiver.flg_notificacao_ativa = this.notification;
     await this.servConfig.putReceiver(this.receiver);
   }

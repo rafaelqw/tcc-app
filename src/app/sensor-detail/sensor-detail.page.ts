@@ -21,7 +21,8 @@ export class SensorDetailPage implements OnInit {
     await this.loadSensor(this.id_sensor);
   }
   
-  async loadSensor(id){
+  // Busca o sensor que foi selecionado na tela de sensores
+  private async loadSensor(id){
     this.sensor = await this.servSensor.getSensoresById(id);
     this.sensor = JSON.parse(this.sensor);
     console.log(this.sensor);
@@ -29,6 +30,7 @@ export class SensorDetailPage implements OnInit {
     await this.getDataGraphic(60);
   }
 
+  // Busca os dados do sensor e monta o grafico dele
   private async getDataGraphic(periodo){
     const sensor = this.sensor;
 
@@ -62,7 +64,8 @@ export class SensorDetailPage implements OnInit {
     });
   }
 
-  async getRandomColor() {
+  // Gera um cor randomica
+  private async getRandomColor() {
     var letters = '0123456789AB';
     var color = '#';
     for (var i = 0; i < 6; i++) {
