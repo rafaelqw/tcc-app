@@ -1,0 +1,37 @@
+.cardSensor{
+    ion-card-content{
+        .header{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nome{
+            height: 33px;
+            font-size: 20px;
+            font-weight: 600;
+        }
+        .disp{
+            color: #737373b8;
+            font-size: 15px;
+            line-height: 0;
+        }
+        .tipo{
+            padding-top: 10px;
+        }
+
+        hr{
+            border: 1px solid #dddddd7a;
+            box-sizing: border-box;
+            margin-top: 10px;
+            margin-bottom: 6px;
+        }
+
+        .desc{
+            p{
+                line-height: 1;
+                text-align: justify;
+            }
+        }
+    }
+}

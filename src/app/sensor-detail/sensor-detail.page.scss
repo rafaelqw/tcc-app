@@ -1,0 +1,86 @@
+div[scrollx=true] {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    .scroll-item {
+        flex: 0 0 auto; 
+    }
+  }
+  
+  .intervalo{
+    p{
+      text-align: center;
+      width: 100%;
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+  
+    .buttons{
+      text-align: center;
+    }
+  
+    .btn_intervalo{
+      width: 23%;
+    }
+  }
+  
+  .chart{
+    .chart_header{
+      text-align: center;
+      padding: 10px;
+      background: #88b3ff9e;
+        .title{
+          color: #0f0f0f;
+          font-size: 22px;
+          font-weight: 600;
+        }
+    }
+  }
+  
+  .borderShadow{
+    -webkit-box-shadow: 0px 1px 10px 0px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0px 1px 10px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 1px 10px 0px rgba(0,0,0,0.2);
+  }
+  
+  .cardSensor{
+    ion-card-content{
+        .header{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nome{
+            height: 33px;
+            font-size: 20px;
+            font-weight: 600;
+        }
+        .disp{
+            color: #737373b8;
+            font-size: 15px;
+            line-height: 0;
+        }
+        .tipo{
+            padding-top: 10px;
+        }
+
+        hr{
+            border: 1px solid #dddddd7a;
+            box-sizing: border-box;
+            margin-top: 10px;
+            margin-bottom: 6px;
+        }
+
+        .desc{
+            p{
+                line-height: 1;
+                text-align: justify;
+            }
+        }
+    }
+}

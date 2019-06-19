@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Sensor</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card class="cardSensor">
+        <ion-card-content>
+            <div class="header">
+                <div>
+                    <p class="nome">{{ sensor.nome }}</p>
+                    <p class="disp">{{ sensor.dispositivo }}</p>
+                </div>
+                <p class="tipo">{{ sensor.tipo_sensor }}</p>
+            </div>
+            <hr>
+            <div class="desc">
+                <p>{{ sensor.descricao }}</p>
+            </div>
+        </ion-card-content>
+      </ion-card>
+
+    <ion-card class="chart">
+      <ion-card-content>
+        <div scrollX="true" style="width:630px;">
+          <canvas id="chart-{{ sensor.id }}"></canvas>
+          <p style="min-width:310px;">&nbsp;</p>
+        </div>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card class="intervalo">
+        <ion-card-content>
+            <p>Filtrar pelas ultimas:</p>
+            <div class="buttons">
+                <ion-button class="btn_intervalo" shape="round" (click)='getDataGraphic(60)'>24h</ion-button>
+                <ion-button class="btn_intervalo" shape="round" (click)='getDataGraphic(30)'>12h</ion-button>
+                <ion-button class="btn_intervalo" shape="round" (click)='getDataGraphic(15)'>6h</ion-button>
+                <ion-button class="btn_intervalo" shape="round" (click)='getDataGraphic(5)'>2h</ion-button>
+            </div>
+          </ion-card-content>
+    </ion-card>
+</ion-content>

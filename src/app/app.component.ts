@@ -17,7 +17,17 @@ export class AppComponent {
     {
       title: 'Dashboard',
       url: '/home',
-      icon: 'home'
+      icon: 'pie'
+    },
+    {
+      title: 'Dispositivos',
+      url: '/dispositivos',
+      icon: 'calculator'
+    },
+    {
+      title: 'Sensores',
+      url: '/sensores',
+      icon: 'speedometer'
     },
     {
       title: 'Configurações',

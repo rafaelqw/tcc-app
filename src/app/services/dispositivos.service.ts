@@ -6,7 +6,7 @@ import { Storage } from '@ionic/storage';
 @Injectable({
   providedIn: 'root'
 })
-export class HomeService {
+export class DispositivosService {
   private token: any;
   private id_usuario: number;
   private id_empreendimento: number;
@@ -18,22 +18,24 @@ export class HomeService {
   ) { 
     this.initialize();
   }
-  
+
   public async initialize(){
     this.token = await this.storage.get('token'); 
     this.id_usuario = await this.storage.get('id_usuario');
     this.id_empreendimento = await this.storage.get('id_empreendimento');
   }
-    
-  public async saveReceiver(receiver){
+
+  public async getDispositivos(){
+    await this.initialize();
     var headers = new Headers();
     headers.append('Content-Type', 'application/json' );
     headers.append('Device', "mobile");
     headers.append('Authorization', 'Bearer ' + this.token);
     let options = new RequestOptions({ headers: headers });
-    
+  
     return new Promise((resolve, reject) => {
-      this.http.post(ConnectionConf.urlBase + "receiver", receiver, options )
+      this.http.get(ConnectionConf.urlBase + 
+        "dispositivo/"+ this.id_empreendimento , options )
         .subscribe(
           result => {
             resolve(result['_body']);
@@ -43,5 +45,4 @@ export class HomeService {
         )
     });
   }
-
 }

@@ -20,7 +20,23 @@ const routes: Routes = [
     loadChildren: './login/login.module#LoginPageModule' 
   },
   { path: 'configuracao', 
-    loadChildren: './configuracao/configuracao.module#ConfiguracaoPageModule' }
+    loadChildren: './configuracao/configuracao.module#ConfiguracaoPageModule' 
+  },
+  { path: 'dispositivos', 
+    loadChildren: './dispositivos/dispositivos.module#DispositivosPageModule' 
+  },
+  { 
+    path: 'sensores', 
+    loadChildren: './sensores/sensores.module#SensoresPageModule' 
+  },
+  { 
+    path: 'sensores/:id_disp', 
+    loadChildren: './sensores/sensores.module#SensoresPageModule' 
+  },
+  { 
+    path: 'sensor-detail/:id', 
+    loadChildren: './sensor-detail/sensor-detail.module#SensorDetailPageModule' 
+  }
 ];
 
 @NgModule({

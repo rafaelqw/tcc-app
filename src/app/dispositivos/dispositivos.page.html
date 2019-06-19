@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>dispositivos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card class="cardDispositivo" 
+      *ngFor="let dispositivo of dispositivos" 
+      (click)='redirectSensores(dispositivo.id)'>
+      <ion-card-content>
+          <div class="header">
+              <div>
+                  <p class="nome">{{ dispositivo.nome }}</p>
+                  <p class="modelo">{{ dispositivo.modelo }}</p>
+              </div>
+              <p class="qtd">Qtd. Sensores: {{ dispositivo.qtd_sensores }}</p>
+          </div>
+          <hr>
+          <div class="desc">
+              <p>{{ dispositivo.descricao }}</p>
+          </div>
+      </ion-card-content>
+    </ion-card>
+</ion-content>

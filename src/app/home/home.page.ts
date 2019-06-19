@@ -1,14 +1,12 @@
 import { Component } from '@angular/core';
 import { MenuController } from '@ionic/angular';
 import { Storage } from '@ionic/storage';
-import { stringify } from '@angular/compiler/src/util';
 import { AlertController } from '@ionic/angular';
 import { ToastController } from '@ionic/angular';
 import { Device } from '@ionic-native/device/ngx';
 import { HomeService } from '../services/home.service';
+import { SensoresService } from '../services/sensores.service';
 import { Chart } from 'chart.js';
-import { forEach } from '@angular/router/src/utils/collection';
-import { async } from '@angular/core/testing';
 
 @Component({
   selector: 'app-home',
@@ -24,7 +22,8 @@ export class HomePage {
     private alertController: AlertController,
     private toastController: ToastController,
     private device: Device,
-    private servHome: HomeService
+    private servHome: HomeService,
+    private servSensor: SensoresService
   ) {
     this.initialize();
     //this.updateGraphics(60);
@@ -108,7 +107,7 @@ export class HomePage {
   }
 
   private async getSensores(){
-    this.sensores = await this.servHome.getSensores();
+    this.sensores = await this.servSensor.getSensores();
     this.sensores = JSON.parse(this.sensores);
   }
 
@@ -118,7 +117,7 @@ export class HomePage {
       const sensor = this.sensores[i];
 
       var valores : any;
-      valores = await this.servHome.getDataGraphic(sensor.id, periodo);
+      valores = await this.servSensor.getDataGraphic(sensor.id, periodo);
       valores = JSON.parse(valores);
       
       var labels = []; 
