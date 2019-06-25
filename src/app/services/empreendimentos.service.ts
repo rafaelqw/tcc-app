@@ -6,7 +6,7 @@ import { Storage } from '@ionic/storage';
 @Injectable({
   providedIn: 'root'
 })
-export class DispositivosService {
+export class EmpreendimentosService {
   private token: any;
   private id_usuario: number;
   private id_empreendimento: number;
@@ -15,19 +15,17 @@ export class DispositivosService {
     public http: Http,
     public requestOptions: RequestOptions,
     private storage: Storage
-  ) { 
-    this.initialize();
-  }
+  ) { }
 
   // Busca o token, id_usuario e id_empreendimento no BD local do celular
   private async initialize(){
     this.token = await this.storage.get('token'); 
     this.id_usuario = await this.storage.get('id_usuario');
-    this.id_empreendimento = await this.storage.get('id_empreendimento');
+    //this.id_empreendimento = await this.storage.get('id_empreendimento');
   }
 
-  // Busca os dispositivos vinculados ao empreendimento via requisição HTTP
-  public async getDispositivos(){
+  // Busca os sensor pelo id via HTTP
+  public async getEmpreendimentosByIdUsu(){
     await this.initialize();
     var headers = new Headers();
     headers.append('Content-Type', 'application/json' );
@@ -37,7 +35,7 @@ export class DispositivosService {
   
     return new Promise((resolve, reject) => {
       this.http.get(ConnectionConf.urlBase + 
-        "dispositivo/empre/"+ this.id_empreendimento , options )
+        "empreendimento/id_usuario/"+ this.id_usuario, options )
         .subscribe(
           result => {
             resolve(result['_body']);
@@ -48,3 +46,4 @@ export class DispositivosService {
     });
   }
 }
+

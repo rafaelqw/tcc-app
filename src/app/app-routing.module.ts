@@ -32,6 +32,10 @@ const routes: Routes = [
   { 
     path: 'sensor-detail/:id', 
     loadChildren: './sensor-detail/sensor-detail.module#SensorDetailPageModule' 
+  },
+  { 
+    path: 'empreendimentos',
+    loadChildren: './empreendimentos/empreendimentos.module#EmpreendimentosPageModule' 
   }
 ];
 

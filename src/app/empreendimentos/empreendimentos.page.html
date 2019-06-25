@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>empreendimentos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="configCard">
+    <ion-card-content>
+      <ion-list>
+        <ion-item  *ngFor="let empreendimento of empreendimentos">
+          <ion-label>{{ empreendimento.nome }}</ion-label>
+          <ion-button shape="round" (click)='login(empreendimento.id)'>Entrar</ion-button>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

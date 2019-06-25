@@ -25,9 +25,7 @@ export class LoginPage implements OnInit {
     private servLogin: LoginService,
     private toastController: ToastController,
     private menuCtrl: MenuController,
-    private storage: Storage,
-    private alertController: AlertController,
-    private device: Device
+    private storage: Storage
   ) {
     this.menuCtrl.enable(false);
   }
@@ -46,12 +44,12 @@ export class LoginPage implements OnInit {
           if (this.data.login) {
             await this.storage.set('token',this.data.token);
             await this.storage.set('id_usuario',this.data.id_usuario);
-            await this.storage.set('id_empreendimento', this.data.id_empreendimento);
+            //await this.storage.set('id_empreendimento', this.data.id_empreendimento);
             await this.storage.set('notification',this.data.notification);
             this.email = null;
             this.senha = null;
             await this.showToast(this.data.msg,'success',1500);
-            this.navCtrl.navigateRoot('/home');
+            this.navCtrl.navigateRoot('/empreendimentos');
           }
           else {
             await this.showToast(this.data.msg,'danger',1500);
@@ -70,6 +68,7 @@ export class LoginPage implements OnInit {
       await this.showToast("Preencha os dados de login",'danger',1500);
     }
   }
+
 
   // Exibe Mensagem de Sucesso ou erro do login
   private async showToast(message:string, color:string, duration:any){
