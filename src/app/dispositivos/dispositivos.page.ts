@@ -8,7 +8,7 @@ import { NavController } from '@ionic/angular';
   styleUrls: ['./dispositivos.page.scss'],
 })
 export class DispositivosPage implements OnInit {
-  private dispositivos : any = [];
+  public dispositivos : any = [];
   constructor(
     private servDisp: DispositivosService,
     private navCtrl: NavController

@@ -8,8 +8,8 @@ import { ConfiguracaoService } from '../services/configuracao.service'
 })
 export class ConfiguracaoPage implements OnInit {
   
-  private notification: boolean;
-  private receiver: any;
+  public notification: boolean;
+  public receiver: any;
   constructor(
     private servConfig: ConfiguracaoService
   ) { 

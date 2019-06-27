@@ -16,9 +16,9 @@ import { Device } from '@ionic-native/device/ngx';
 })
 export class LoginPage implements OnInit {
   //variables
-  private email: string;
-  private senha: string;
-  private data: any;
+  public email: string;
+  public senha: string;
+  public data: any;
 
   constructor(
     private navCtrl: NavController,

@@ -9,7 +9,7 @@ import { Chart } from 'chart.js';
   styleUrls: ['./sensor-detail.page.scss'],
 })
 export class SensorDetailPage implements OnInit {
-  private sensor : any;
+  public sensor : any;
   public id_sensor: any; 
   constructor(
     private servSensor: SensoresService,
@@ -31,7 +31,7 @@ export class SensorDetailPage implements OnInit {
   }
 
   // Busca os dados do sensor e monta o grafico dele
-  private async getDataGraphic(periodo){
+  public async getDataGraphic(periodo){
     const sensor = this.sensor;
 
     var valores : any;
